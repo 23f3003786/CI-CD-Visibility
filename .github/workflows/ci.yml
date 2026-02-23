@@ -1,0 +1,16 @@
+name: CI  # This names your workflow for the badge
+
+on:
+  push:
+    branches: [ main ]  # Runs on pushes to main branch
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:  # Lets you manually trigger it from the Actions tab
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Say hello  # Dummy step that always succeeds
+        run: echo "CI is working!"
